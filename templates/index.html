@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Leaflet Map</title>
+	<!-- Our own style sheet -->
+	<link rel="stylesheet" href="../static/css/leafletMap.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+	
+	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<div id="mapid", class="center">
+<script>
+//make map
+var mymap = L.map('mapid').setView([44.0521, -123.0868], 13);
+
+//tile layer
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(mymap);
+
+//L.marker([51.5, -0.09]).addTo(mymap)
+//    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);
+
+
+</script>
+</div>
+
+</body> </html>
