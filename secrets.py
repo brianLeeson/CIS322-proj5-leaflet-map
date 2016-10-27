@@ -13,8 +13,8 @@ from flask import jsonify # For AJAX transactions
 import json
 import logging
 
-# Our own module not needed
-#import acp_times
+# Our own module 
+import process_POI
 
 ###
 # Globals
@@ -34,7 +34,8 @@ app.secret_key = CONFIG.secret_key  # Should allow using session variables
 @app.route("/index")
 def index():
   app.logger.debug("Main page entry")
-  return flask.render_template('index.html')
+  poi = process_POI.process()
+  return flask.render_template('index.html', poi = poi )
 
 
 @app.errorhandler(404)
@@ -55,9 +56,7 @@ def page_not_found(error):
 @app.route("/_calc_times")
 def _calc_times():
   """
-  Calculates open/close times from miles, using rules 
-  described at https://rusa.org/octime_alg.html.
-  Expects one URL-encoded argument, the number of miles. 
+  returns datasctructure that contains the POIs
   """
   app.logger.debug("Got a JSON request");
   
@@ -77,6 +76,7 @@ def _calc_times():
   
   return jsonify(result=result)
 '''
+
 
 #############
 

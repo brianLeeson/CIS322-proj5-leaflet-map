@@ -11,7 +11,7 @@
 <body>
 
 <div id="mapid", class="center">
-<script>
+<script type="javascript">
 //make map
 var mymap = L.map('mapid').setView([44.0521, -123.0868], 13);
 
@@ -34,8 +34,12 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
+//poi_data = {{ poi | tojason}}
+//for (i = 0; i < poi_data.length; i++){
+//	L.marker([poi_data[1], poi_data[2]]).addTo(mymap)
+//		.bindPopup('poi_data[0]');
+//}
 
-</script>
 </div>
 
 </body> </html>
