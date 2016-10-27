@@ -13,13 +13,8 @@ from flask import jsonify # For AJAX transactions
 import json
 import logging
 
-# Date handling 
-import arrow # Replacement for datetime, based on moment.js
-import datetime # But we still need time
-from dateutil import tz  # For interpreting local times
-
-# Our own module
-import acp_times
+# Our own module not needed
+#import acp_times
 
 ###
 # Globals
@@ -39,7 +34,7 @@ app.secret_key = CONFIG.secret_key  # Should allow using session variables
 @app.route("/index")
 def index():
   app.logger.debug("Main page entry")
-  return flask.render_template('calc.html')
+  return flask.render_template('index.html')
 
 
 @app.errorhandler(404)
@@ -47,7 +42,7 @@ def page_not_found(error):
     app.logger.debug("Page not found")
     #flask.session['linkback'] =  flask.url_for("/")
     #flask.session['linkback'] =  flask.url_for("/")
-    return flask.render_template('page_not_found.html'), 404
+    return flask.render_template('404.html'), 404
 
 
 ###############
@@ -56,6 +51,7 @@ def page_not_found(error):
 #   These return JSON, rather than rendering pages. 
 #
 ###############
+'''
 @app.route("/_calc_times")
 def _calc_times():
   """
@@ -80,7 +76,7 @@ def _calc_times():
   result={ "open": open_time, "close": close_time }
   
   return jsonify(result=result)
-
+'''
 
 #############
 
