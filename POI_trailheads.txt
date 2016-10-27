@@ -1,1 +1,3 @@
 Rexius, 44.03229, -123.08786
+Alton Baker, 44.05637, -123.08076
+Ridgeline Foxhollow, 43.9874, -123.07846
