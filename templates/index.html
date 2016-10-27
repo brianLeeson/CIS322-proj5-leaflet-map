@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+    <title>Leaflet Map</title>
+
+    <link rel="stylesheet" href="/static/css/leaflet.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key={{secret_key}}"></script>
+    <!-- secret_key comes from secrets.py -->
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.s/mq-geocoding.js?key={{secret_key}}"></script>
+    <!-- secret_key comes from secrets.py -->
+
+
+    <!-- Our own style sheet -->
+    <link rel="stylesheet" href="/static/css/map.css" />
+
+</head>
+
+<body>
+
+    <h1>Leaflet Map</h1>
+
+
+    <div id="mapid"></div>
+
+    <div style="height:300px;overflow:auto;">
+        <table>
+            {% for place in places %}
+            <tr class="row">
+                <td>{{place[0]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+    <script type="text/javascript">
+        window.onload = function() {
+            // eugene_coords = [44.0496, -123.09322]
+            // var places = {{places | tojson}};
+            // var map = L.map('mapid').setView(eugene_coords, 10); //sets location to Eugene Oregon
+            //
+            // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            // }).addTo(map);
+            //
+            // map.locate({setView: true}).on('locationfound', function(e) {
+            //         L.marker([e.latitude, e.longitude]).bindPopup('You are here :').openPopup().addTo(map);
+            //     });
+            //
+            //
+            // for (var i = 0; i < places.length; i++) {
+            //     var marker = L.marker([places[i][1], places[i][2]]).addTo(map);
+            // }
+            var map = L.map('mapid').setView([51.505, -0.09], 13);
+
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([51.5, -0.09]).addTo(map)
+                .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+                .openPopup();
+        }
+    </script>
+
+
+
+</body>
+
+</html>

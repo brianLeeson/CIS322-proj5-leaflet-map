@@ -1,0 +1,5 @@
+Burrito Boy Franklin, 44.04971, -123.08456
+Burritos Amigos Amazon, 44.03269, -123.0816
+Taco Bell 11th, 44.04752, -123.13499
+El Super Taco, 44.04787, -123.14734
+El Super Burrito, 44.03063, -123.09124
