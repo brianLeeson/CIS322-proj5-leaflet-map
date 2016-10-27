@@ -34,7 +34,7 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
-poi_data = {{ poi | tojason}}
+var poi_data = {{ poi | tojason}}
 for (i = 0; i < poi_data.length; i++){
 	L.marker([poi_data[1], poi_data[2]]).addTo(mymap)
 		.bindPopup('poi_data[0]');
