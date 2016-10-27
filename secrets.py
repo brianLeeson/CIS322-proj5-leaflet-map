@@ -35,7 +35,8 @@ app.secret_key = CONFIG.secret_key  # Should allow using session variables
 def index():
   app.logger.debug("Main page entry")
   poi = process_POI.process()
-  return flask.render_template('index.html', poi = poi )
+  #, poi = poi
+  return flask.render_template('index.html')
 
 
 @app.errorhandler(404)
