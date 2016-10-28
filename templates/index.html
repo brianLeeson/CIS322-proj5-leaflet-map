@@ -31,13 +31,11 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
+var points = {{session.points  | tojson}}
+for (var i = 0; i <points.length; i++){
+	L.marker([points["lat"], points["lon"]]).addTo(mymap).bindPopup(points["disc"]);
+}
 
-{% for entry in session.points %}
-	var lat = {entry.lat | tojson}
-	var lon = {entry.lon | tojson}
-	var disc = {entry.disc | tojson}
-	L.marker([lat, lon]).addTo(mymap).bindPopup(disc); 
-{% endfor %}
 
 </script>
 
