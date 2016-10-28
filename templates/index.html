@@ -11,7 +11,7 @@
 <body>
 
 <div id="mapid", class="center">
-<script type="javascript">
+<script>
 //make map
 var mymap = L.map('mapid').setView([44.0521, -123.0868], 13);
 
@@ -31,8 +31,6 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
-</script>
-<script> 
 
 {% for entry in session.points %}
 	var lat = {entry.lat}
@@ -42,6 +40,7 @@ mymap.on('click', onMapClick);
 {% endfor %}
 
 </script>
+
 </div>
 
 </body>
