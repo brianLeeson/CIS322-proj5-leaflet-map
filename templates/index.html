@@ -39,7 +39,7 @@ mymap.on('click', onMapClick);
 	var lon = entry.lon;
 	var disc = entry.disc;
 	L.marker([lat, lon]).addTo(mymap).bindPopup(disc);
-
+{% endfor %}
 }
 
 
