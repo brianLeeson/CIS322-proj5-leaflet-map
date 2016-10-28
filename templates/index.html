@@ -37,9 +37,9 @@ mymap.on('click', onMapClick);
 
 {% for entry in session.points
 	<script>
-	var lat = {{entry.lat | tojson}}
-	var lon = {{entry.lon | tojson}}
-	var disc = {{entry.disc | tojson}}
+	var lat = {entry.lat}
+	var lon = {entry.lon | tojson}
+	var disc = entry.disc
 	L.marker([lat, lon]).addTo(mymap).bindPopup(disc); 
 	
 
