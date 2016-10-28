@@ -35,7 +35,7 @@ mymap.on('click', onMapClick);
     var latitude = {{entry.lat}};
     var longitude = {{entry.lon}};
     var desc = '{{entry.desc}}';
-    L.marker([latitude, longitude]).addTo(map)
+    L.marker([latitude, longitude]).addTo(mymap)
         .bindPopup(desc);
 {% endfor %}
 
