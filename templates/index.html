@@ -20,9 +20,6 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(mymap);
 
-//L.marker([51.5, -0.09]).addTo(mymap)
-//    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
-
 var popup = L.popup();
 
 function onMapClick(e) {
@@ -34,7 +31,14 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
+{% for entry in session.points %}
+	var lat = entry.lat;
+	var lon = entry.lon;
+	var disc = entry.disc;
+	L.marker([lat, lon]).addTo(mymap).bindPopup(disc);
+{% endfor %}
 
+</script>
 
 </div>
 
