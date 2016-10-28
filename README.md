@@ -1,9 +1,8 @@
 # Project 5: Leaflet Map
 
 ### AUTHOR: Brian Leeson, bel@cs.uoregon.edu
-
-## This repo was modified from a cloned and then gutted repo written by:
-## Brandon Sov , bhs@cs.uoregon.edu ###
+This repo was modified from a cloned and then gutted repo written by:
+Brandon Sov , bhs@cs.uoregon.edu 
 
 ## Description ##
 Project runs a server that serves a leaflet map with points of interest as markers.
