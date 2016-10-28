@@ -11,7 +11,7 @@
 <body>
 
 <div id="mapid", class="center">
-<script>
+<script type="text/javascript">
 //make map
 var mymap = L.map('mapid').setView([44.0521, -123.0868], 13);
 
@@ -31,7 +31,7 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
-var points = {{session.points  | tojson}}
+var points = {{session.points | tojson}};
 for (var i = 0; i <points.length; i++){
 	L.marker([points["lat"], points["lon"]]).addTo(mymap).bindPopup(points["disc"]);
 }
