@@ -9,7 +9,7 @@ def process():
 	
 	for line in read_data:
 		parts = line.split(",")
-		point_data = {"disc": parts[0].strip(), "lat": float(parts[1].strip()), "lon": float(parts[2].strip())}
+		point_data = {"lat": float(parts[1].strip()), "lon": float(parts[2].strip()), "disc": parts[0].strip()}
 		poi_list.append(point_data)
 		
 	return poi_list
