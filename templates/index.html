@@ -31,14 +31,16 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
-{% for entry in session.points %}
-	var lat = entry.lat;
-	var lon = entry.lon;
-	var disc = entry.disc;
-	L.marker([lat, lon]).addTo(mymap).bindPopup(disc);
-{% endfor %}
-
 </script>
+
+{% for entry in session.points %}
+	<script> 
+	var lat = entry.lat; 
+	var lon = entry.lon; 
+	var disc = entry.disc; 
+	L.marker([lat, lon]).addTo(mymap).bindPopup(disc); 
+	</script>
+{% endfor %}
 
 </div>
 
