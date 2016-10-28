@@ -13,3 +13,5 @@ def process():
 		poi_list.append(point_data)
 		
 	return poi_list
+
+print(process())

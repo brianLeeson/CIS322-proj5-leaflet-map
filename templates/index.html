@@ -35,9 +35,9 @@ mymap.on('click', onMapClick);
 
 {% for entry in session.points %}
 	<script> 
-	var lat = {{entry.lat}}; 
-	var lon = {{entry.lon}}; 
-	var disc = {{entry.disc}}; 
+	var lat = {entry.lat}; 
+	var lon = {entry.lon}; 
+	var disc = {entry.disc}; 
 	L.marker([lat, lon]).addTo(mymap).bindPopup(disc); 
 	</script>
 {% endfor %}
