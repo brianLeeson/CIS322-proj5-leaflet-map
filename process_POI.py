@@ -1,6 +1,7 @@
 def process():
 	'''
-	processes_POI.txt and returns a list of dicts containing the items
+	processes_POI.txt and return a list of dicts containing the points lat, long and discription
+	poi_list = [{'lat': lat#, 'lon': lon#, 'disc': 'text'}, {...}, ...]
 	'''
 	poi_list = []
 	
@@ -13,5 +14,3 @@ def process():
 		poi_list.append(point_data)
 		
 	return poi_list
-
-print(process())

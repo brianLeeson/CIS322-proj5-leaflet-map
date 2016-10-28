@@ -1,6 +1,6 @@
-# Project 4:  Brevet time calculator with Ajax
+# Project 5: Leaflet Map
 
-### This repo was modified from a cloned repo written by:
+### This repo was modified from a cloned and then gutted repo written by:
 ### Brandon Sov , bhs@cs.uoregon.edu ###
 
 ##Description##

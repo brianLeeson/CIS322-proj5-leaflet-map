@@ -10,7 +10,7 @@
 
 <body>
 
-<div id="mapid", class="center">
+<div id="mapid">
 <script type="text/javascript">
 //make map
 var mymap = L.map('mapid').setView([44.0521, -123.0868], 13);
@@ -31,13 +31,14 @@ function onMapClick(e) {
 
 mymap.on('click', onMapClick);
 
+//Create points
 {% for entry in session.points %}
     var latitude = {{entry.lat}};
     var longitude = {{entry.lon}};
     var desc = '{{entry.disc}}';
 	console.log(desc)
     L.marker([latitude, longitude]).addTo(mymap)
-        .bindPopup("This is the trailhead for" + desc);
+        .bindPopup("This is the trailhead for: " + desc);
 {% endfor %}
 
 </script>
