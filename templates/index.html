@@ -36,7 +36,6 @@ mymap.on('click', onMapClick);
     var latitude = {{entry.lat}};
     var longitude = {{entry.lon}};
     var desc = '{{entry.disc}}';
-	console.log(desc)
     L.marker([latitude, longitude]).addTo(mymap)
         .bindPopup("This is the trailhead for: " + desc);
 {% endfor %}
