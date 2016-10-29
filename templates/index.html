@@ -23,11 +23,11 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 var popup = L.popup();
 
 function onMapClick(e) {
-    popup
-		.locate()
-        //.setLatLng(e.latlng)
-        //.setContent("You clicked the map at " + e.latlng.toString())
-        //.openOn(mymap); //maybe delete
+	mymap.locate(setView = true)
+	
+	L.marker([e.latitude, e.longitude]).addTo(mymap)
+        .bindPopup("You are here.");
+	
 }
 
 mymap.on('click', onMapClick);
