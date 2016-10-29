@@ -24,7 +24,7 @@ var popup = L.popup();
 
 function onMapClick(e) {
 	mymap.
-		locate({setView = true})
+		locate({setView : true})
 		.on('locationfound', function(e){
 		L.marker([e.latitude, e.longitude]).addTo(mymap).bindPopup("You are here.");
 		});
